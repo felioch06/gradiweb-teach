@@ -1,0 +1,10 @@
+<div class="s-container__div">
+    <img src="{{ item | img_url: "1000x500", crop: "center" }}" class="s-container__image" alt="">
+    <div class="s-container__content">
+      <h2 class="s-container__content-title">{{ item.title }}</h2>
+      <p class="s-container__content-text">
+        {{item.description | slice: 0,100 }}
+      </p>
+      <a href="{{ item.url }}" class="s-container__content-link">Ver más ></a>
+    </div>
+  </div>

@@ -1,0 +1,337 @@
+
+input:focus {
+  outline: none !important;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0px !important;
+}
+
+/* Product Card  */
+.card {
+  margin: 20px;
+  width: 100%;
+  height: auto;
+  box-shadow: 5px 5px 20px rgb(199, 199, 199);
+  border-radius: 20px;
+}
+
+.card .card-image {
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+  width: 100%;
+  height: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+.card .card-image .image {
+  flex-shrink: 0;
+  min-width: 100%;
+  min-height: 100%;
+  transition: 1s;
+}
+.card .card-image .image:hover {
+  transform: scale(1.2, 1.2);
+  transition: 1s;
+}
+
+.card .card-content {
+  padding: 20px;
+}
+
+.card .card-content .button {
+  width: 100%;
+  background-color: #009aff;
+  padding: 10px 20px;
+  border: none;
+  color: white;
+  border-radius: 50px;
+  transition: 0.5s;
+}
+
+.card .card-content .button:hover {
+  background-color: #007acb;
+  transition: 0.5s;
+}
+
+.card .card-content .card-input {
+  width: 100%;
+  margin: 5px 0px;
+  border-radius: 50px;
+}
+
+/* Slider */
+
+ .slider {
+  overflow: hidden;
+  position: relative;
+  width: 500%;
+  margin: 0;
+  left: 0;
+  text-align: left;
+  animation: 20s slidy infinite;
+}
+
+.slider .slider-container {
+  position: relative;
+  display: inline-block;
+  text-align: center;
+}
+
+.slider-text-content {
+  position: absolute;
+  padding: 0px 100px;
+  width: 100%;
+  text-align: center;
+}
+
+.slider .slider-container .slider-text {
+  color: white;
+  font-size: 150%;
+  top: 50%;
+}
+
+.slider .slider-container .slider-title {
+  color: white;
+  font-size: 200%;
+  top: 45%;
+}
+
+.slider .slider-container .slider-button {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  bottom: 10%;
+}
+
+.slider .slider-container .slider-button a {
+  padding: 10px 20px;
+  width: 20rem;
+  border: none;
+  border-radius: 50px;
+  background-color: white;
+}
+
+.slider .slider-container img {
+  width: 99vw;
+  float: left;
+  filter: brightness(60%);
+  min-height: 100%;
+  min-width: 100%;
+  object-fit: cover;
+}
+
+@keyframes slidy {
+  0% {
+    left: 0%;
+  }
+  12% {
+    left: 0%;
+  }
+  20% {
+    left: -100%;
+  }
+  30% {
+    left: -100%;
+  }
+  45% {
+    left: -200%;
+  }
+  60% {
+    left: -200%;
+  }
+  80% {
+    left: -300%;
+  }
+  90% {
+    left: -300%;
+  }
+  100% {
+    left: -0%;
+  }
+} 
+
+/* Collage */
+
+.collage{
+    padding: 20px;
+    display: grid;
+    grid-template-columns: repeat(3, auto);
+    grid-gap: 20px;
+    grid-row: auto;
+    justify-content: center;
+}
+
+.collage-image{
+  box-shadow: 5px 5px 20px rgb(189, 189, 189);
+  transition: .5s;
+}
+
+.collage-image:hover{
+  transition: .5s;
+  transform: scale(1.05, 1.05)
+}
+
+@media (max-width: 1000px) {
+  .collage{
+    grid-template-columns: repeat(2,auto) !important;
+  }
+}
+@media (max-width: 600px) {
+  .collage{
+    grid-template-columns: auto !important;
+  }
+}
+
+/* Modal */
+
+.modal-cart {
+  display: none; 
+  position: fixed; 
+  z-index: 10000; 
+  padding-top: 100px; 
+  left: 0;
+  top: 0;
+  width: 100%; 
+  height: 100%; 
+  overflow: auto; 
+  background-color: rgb(0,0,0); 
+  background-color: rgba(0,0,0,0.4); 
+}
+
+.modal-cart .modal-body {
+  position: relative;
+  background-color: #fefefe;
+  margin: auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%;
+  animation-name: animatetop;
+  animation-duration: 0.4s
+}
+
+.modal-cart .modal-body .modal-close {
+  position: absolute;
+  top: 0px;
+  right: 15px;
+  color: #aaaaaa;
+  font-size: 28px;
+  font-weight: bold;
+}
+.modal-cart .modal-body .modal-content {
+  margin-top: 2%;
+}
+
+.modal-close:hover,
+.modal-close:focus {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.modal-container-image{
+  font-size: 20px;
+  font-weight: bold;
+  display: flex;
+  align-items: center
+}
+.modal-image{
+  margin-right:10px;
+  border-radius: 25px;
+  width: 20%;
+}
+
+.modal-input{
+  border-radius: 50px;
+  width: 100%;
+}
+
+.modal-content table, td, th {
+  border:none !important;
+}
+
+.modal-content thead, tr{
+  padding:40px !important;
+  border-bottom: 1px solid rgb(224, 224, 224);
+}
+
+.modal-select{
+  width:100%;
+}
+
+
+@keyframes animatetop {
+  from {top: -300px; opacity: 0}
+  to {top: 0; opacity: 1}
+}
+
+/* Buttons */
+
+.btn-radius{
+  border-radius: 50px !important;
+}
+
+.btn--red{
+  background-color:#ff2e2e !important;
+}
+
+/* Radio */
+
+.container-labels{
+  width: 100%;
+  margin: 20px;
+}
+
+.container-options{
+  width: 100%;
+  height: auto;
+  display: flex;
+  align-items: center;
+}
+
+.container-color{
+  display: inline-block;
+}
+
+.container-color input[type=radio]{
+  position: absolute;
+  visibility: hidden;
+}
+.container-color .container-color__label{
+  width: 3rem;
+  height: 3rem;
+  border: 2px solid rgb(208, 208, 208);
+  border-radius: 10px;
+}
+.container-color .container-color__label--small{
+  padding: .5rem 1.5rem !important;
+  border: 2px solid grey;
+  border-radius: 15px;
+  background-color: rgb(232, 232, 232);
+}
+
+input[type=radio]:checked + label{
+  border:  100px solid black !important;
+}
+
+
+.card-alert{
+  display: none;
+  background-color: rgb(255, 223, 223);
+  color: red;
+  width: 100%;
+  margin: 15px auto;
+  padding: 5px 20px;
+  border: 1px solid red;
+  border-radius: 10px;
+}

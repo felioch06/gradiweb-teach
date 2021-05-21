@@ -1,0 +1,12 @@
+<div class="container">
+    <h1>{{ page.title }} - {{ page.id }}</h1>
+    <h2>{{ page.published_at | date: "%Y-%m-%d" }}</h2>
+
+    <button class="btn btn-radius" id="showCart">Ver Carrito</button>
+    
+    <div class="row">
+        {% for item in collections.all.products %}
+            {% include 'card-product' %}
+        {% endfor %}
+    </div>
+</div>

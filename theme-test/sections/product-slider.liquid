@@ -1,0 +1,12 @@
+<div class="slider">
+    {% for item in collections.all.products %}
+        <div class="slider-container" >
+            <img src="{{ item.metafields.global.slider }}" alt="alt">
+            <div class="slider-title slider-text-content">{{ item.title }}</div>
+            <div class="slider-text slider-text-content">{{ item.content }}</div>
+            <div class="slider-button"><a href="{{ item.url }}">Comprar</a></div>
+        </div>
+    {% endfor %}
+    </div>
+</div> 
+    

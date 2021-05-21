@@ -1,0 +1,92 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+/* Talla, colores, selector por variacion, Variaciones. */
+*{
+    margin: 0;
+    padding: 0;
+}
+
+.s-container{
+    width:100%;
+    height:auto;
+
+    display:flex;
+    flex-wrap: wrap;
+}
+
+.s-container__div{
+    width: 50%;
+    height: 50vh;
+
+    position:relative;
+
+    box-sizing: border-box;
+}
+
+.s-container__image{
+    width:100%;
+    height: auto;
+
+    filter: brightness(60%);
+}
+@supports(object-fit: cover){
+    .s-container__image{
+      height: 100%;
+
+      object-fit: cover;
+      object-position: center center;
+    }
+}
+
+.s-container__content{
+    width:50%;
+
+    position:absolute;
+    top:50%;
+    transform:translateY(-50%);
+    left:30px;
+}
+
+.s-container__content-title{
+    margin: 10px 0;
+
+    color:white;
+    text-transform: capitalize;
+    letter-spacing: 1px;
+}
+
+.s-container__content-text{
+    margin: 10px 0;
+
+    color:white;
+    letter-spacing: 0.72px;
+    font-size:.90vw;
+    
+}
+
+.s-container__content-link{
+    color:white;
+    letter-spacing: 0.72px;
+    text-decoration: underline;
+
+    transition: .5s;
+}
+.s-container__content-link:hover{
+    color:rgb(230, 230, 230) !important;
+    letter-spacing: 1px;
+
+    transition: .5s;
+}
+
+@media (max-width: 600px) {
+    .s-container__div{
+        width: 100%;
+    }
+
+    .s-container__content{
+        width:90%;
+
+        top: 20px;
+        left: 20px;
+    }
+}

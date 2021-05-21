@@ -1,0 +1,85 @@
+<div class="s-container">
+    {% for item in collections.all.products limit:4 %}
+
+        {% include 'card-section-product' %}
+        
+    {% endfor %}
+</div>
+
+<div class="container">
+    <div class="b-container">
+        <h2 class="b-container__title">{{ section.settings.title }}</h2>
+        <div class="b-container__content">
+          {% for block in section.blocks %}
+            <div class="b-container__item">
+              <img src="{{ block.settings.image | img_url }}" alt="" class="b-container__item-image">
+              <h3 class="b-container__item-title">{{ block.settings.title }}</h3>
+              <p class="b-container__item-text">{{ block.settings.text }}</p>
+            </div>
+          {% endfor %}
+        </div>
+        <a href="/pages/shoes" class="b-container__button b-btn">Ver más</a>
+    </div>
+</div> 
+
+  {% schema %}
+{
+    "name": "Nosotros",
+    "settings": [
+    {
+        "type": "text",
+        "label": "Titulo",
+        "id":"title",
+        "default":"Nuestros productos"
+    }
+    ],
+    "blocks": [
+      {
+        "type": "text_block",
+        "name": "Columna",
+        "settings": [
+          {
+            "type": "image_picker",
+            "id": "image",
+            "label": "imagen"
+          },
+          {
+            "type": "text",
+            "id": "title",
+            "label": "titulo",
+            "default": "agregar titulo"
+          },
+          {
+            "type": "textarea",
+            "id": "text",
+            "label": "texto",
+            "default": "Comparte entradas de blogs, productos o promociones con tus clientes. Usa este texto para describir productos, compartir detalles sobre la disponibilidad y el estilo, o como un espacio para mostrar reseñas recientes o preguntas frecuentes."
+          }
+        ]
+      }
+    ],
+    "default": {
+        "blocks": [
+          {
+            "type": "text_block",
+            "settings": {
+              "title": "Once upon a time..."
+            }
+          },
+          {
+            "type": "text_block",
+            "settings": {
+              "title": "Once upon a time..."
+            }
+          },
+          {
+            "type": "text_block",
+            "settings": {
+              "title": "Once upon a time..."
+            }
+          }
+        ]
+      }
+  }
+  
+{% endschema %}

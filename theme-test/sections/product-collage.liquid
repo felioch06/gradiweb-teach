@@ -1,0 +1,39 @@
+<div class="container">
+
+    <div class="row justify-content-center">
+        <div class="collage" style="grid-template-columns: repeat({{ section.settings.cols }}, auto);">
+            {% assign limitProducts = section.settings.cols | times: section.settings.rows %}
+            {% for item in collections.all.products limit: limitProducts %}
+                    <img src="{{ item | img_url: "300x300", crop: 'center' }}" class="collage-image" alt="">
+            {% endfor %}
+        </div>
+    </div>
+    
+</div>
+
+
+{% schema %}
+{
+    "name":"Collage",
+    "settings":[
+        {
+            "id": "cols",
+            "type":"range",
+            "label": "Columnas",
+            "default": 3,
+            "min": 2,
+            "max": 5,
+            "step":1
+        },
+        {
+            "id": "rows",
+            "type":"range",
+            "label": "Filas",
+            "default": 3,
+            "min": 1,
+            "max": 5,
+            "step":1
+        }
+    ]
+}
+{% endschema %}

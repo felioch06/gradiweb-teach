@@ -1,0 +1,48 @@
+.alert-card{
+    display: none;
+    position: relative;
+    justify-content:space-between;
+    background-color:red;
+    border-radius: 10px;
+    color:white;
+    padding:1rem 2rem;
+    animation: 2.5s fadein;
+}
+
+.card-customer{
+    position: relative;
+    animation: 2.5s fadein;
+    margin: 1rem 0;
+    color: #3A3A3A !important;
+    width:100%;
+    height:auto;
+    padding:3rem;
+    background:rgba(240, 240, 240, 0.363);
+    box-shadow: 5px 5px 15px rgb(204, 204, 204);
+    border-radius: 10px;
+}
+
+
+@keyframes fadein{
+    from{
+        top: -50px;
+    }
+
+    to{
+        top: 0px
+    }
+}
+
+.card-customer__input{
+    border: none !important;
+    box-shadow: 3px 3px 10px rgb(196, 196, 196);
+    filter: blur(0px) !important;
+    width:100%;
+    margin: 2rem 0;
+    border-radius: 10px !important;
+}
+
+.card-customer__submit{
+    width:100% !important;
+    border-radius: 10px !important;
+}

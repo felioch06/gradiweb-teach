@@ -1,0 +1,52 @@
+
+<div class="col-sm-12 col-md-6 col-lg-3">
+    <div class="card">
+        
+        <a href="{{ item.url }}">
+        <div class="card-image">
+            <img src="{{ item | img_url: '300x300', crop: 'center' }}" class="image" alt="pepe" />
+        </div>
+        </a>
+
+        <div class="card-content">
+            <form>
+                <h3>{{ item.title }}</h3>
+                <h4>{{ item.price | money }}</h4>
+
+                {% if item.description.size > 50 %}
+                    <p>{{ item.description | slice: 0, 50 }}...</p>
+                {% else %}    
+                    <p>{{ item.description }}...</p>
+                {% endif %}
+
+                <input type="hidden" id="idProduct" name="id" value="{{ item.variants.first.id }}" />
+                <input type="number" class="card-input" id="quantityProduct" name="quantity" placeholder="Quantity" value="1" />
+                <input type="hidden" name="return_to" value="back" />
+
+                <button onClick="execute(this.form); return false" id="addToCart" name="button" class="button send">{{ 'cart.general.button_label' | t }}</button>
+            </form>
+        </div>
+
+    </div>
+</div>
+
+{% comment %} <div class="col-sm-12 col-md-6 col-lg-3">
+    <div class="card">
+        <a href="{{ item.url }}">
+        <div class="card-image">
+    
+        </div>
+        </a>
+        <div class="card-content">
+            {% form "product", item, id:item.variants.first.id %}
+                <h3>{{ item.title }}</h3>
+                <h4>{{ item.price | money }}</h4>
+                <p>{{ item.description }}</p>
+                <input type="hidden" name="id" value="{{ item.variants.first.id }}" />
+                <input type="number" class="card-input" name="quantity" placeholder="Quantity" value="1" />
+                <input type="hidden" name="return_to" value="back" />
+                <button type="submit" class="button">Agregar al carrito</button>
+            {% endform %}
+        </div>
+    </div>
+</div> {% endcomment %}
